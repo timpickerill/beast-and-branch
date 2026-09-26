@@ -1,0 +1,38 @@
+/*
+ * Beast & Branch: layers a "ledger-rule" inner hairline onto primary buttons and a
+ * press-state nudge onto all buttons, on top of Horizon's existing --button-* variables
+ * (assets/base.css). Loaded after base.css so these box-shadow overrides win the cascade.
+ */
+
+:root {
+  --bb-shadow-press: inset 0 2px 0 rgb(0 0 0 / 18%);
+}
+
+.button:not(.button-secondary, .button-unstyled, .button-unstyled--with-icon, .button-unstyled--transparent),
+.button-custom {
+  box-shadow:
+    inset 0 0 0 var(--button-border-width) var(--button-border-color),
+    inset 0 0 0 3px var(--button-background-color),
+    inset 0 0 0 4px color-mix(in srgb, var(--button-color) 38%, transparent);
+}
+
+.button:active:not(.button-secondary, .button-unstyled, .button-unstyled--with-icon, .button-unstyled--transparent),
+.button-custom:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 0 0 0 var(--button-border-width) var(--button-border-color),
+    inset 0 0 0 3px var(--button-background-color),
+    inset 0 0 0 4px color-mix(in srgb, var(--button-color) 38%, transparent),
+    var(--bb-shadow-press);
+}
+
+.button-secondary:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 0 0 var(--button-border-width) var(--button-border-color), var(--bb-shadow-press);
+}
+
+.button-unstyled:active,
+.button-unstyled--with-icon:active,
+.button-unstyled--transparent:active {
+  transform: translateY(1px);
+}
