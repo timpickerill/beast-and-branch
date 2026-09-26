@@ -235,6 +235,8 @@
     "media_type_info": "خصوصیات آپ کے مینو کے لنک سے پُر کی گئی ہیں"
   },
   "names": {
+    "ornament_divider": "Ornament divider",
+    "ornament_divider_section": "Ornament divider",
     "column": "کالم",
     "product_title": "پروڈکٹ کا ٹائٹل",
     "custom_liquid": "کسٹم Liquid",
@@ -397,6 +399,10 @@
     "comparison_slider": "موازنہ کرنے والا سلائیڈر"
   },
   "options": {
+    "ornament_diamond": "Diamond",
+    "ornament_fleuron": "Fleuron",
+    "ornament_rule": "Plain rule",
+    "ornament_stars": "Stars",
     "above_carousel": "کیرول کے اوپر",
     "accent": "ایکسنٹ",
     "all": "سبھی",
@@ -679,6 +685,7 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "ornament_glyph": "Ornament",
     "accordion": "ایکارڈین",
     "account": "اکاؤنٹ",
     "actions_display_style": "مینو کا اسٹائل",

@@ -1,5 +1,7 @@
 {
   "names": {
+    "ornament_divider": "Ornament divider",
+    "ornament_divider_section": "Ornament divider",
     "404": "404",
     "colors": "カラーパレット",
     "custom_section": "カスタムセクション",
@@ -162,6 +164,7 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "ornament_glyph": "Ornament",
     "alignment": "配置",
     "autoplay": "自動再生",
     "background": "背景",
@@ -577,6 +580,10 @@
     "title_preset": "タイトルプリセット"
   },
   "options": {
+    "ornament_diamond": "Diamond",
+    "ornament_fleuron": "Fleuron",
+    "ornament_rule": "Plain rule",
+    "ornament_stars": "Stars",
     "apple": "Apple",
     "arrow": "矢印",
     "auto": "自動",

@@ -1,0 +1,138 @@
+{%- doc -%}
+  Renders a hairline divider with a centered ornament glyph, used between a section title and its
+  intro, above footers, or between lore-style entries. Beast & Branch equivalent of `divider`.
+
+  @param {string} id - A unique ID for the divider, linking it to a block or section.
+  @param {object} settings - An object containing style settings for the divider.
+
+  @param {string} [settings.glyph] - The center ornament ('diamond', 'stars', 'fleuron', or 'rule'). Defaults to 'diamond'.
+  @param {string} [settings.alignment_horizontal] - The horizontal alignment ('flex-start', 'center', or 'flex-end'). Defaults to 'center'.
+  @param {number} [settings.width_percent] - The maximum width of the divider as a percentage of its container.
+  @param {string} [settings.divider_color] - The color of the divider line and glyph. Falls back to `--color-ornament` when blank.
+
+  @param {boolean} [attributes] - When `true`, render block.shopify_attributes on the divider container.
+  @param {block} [block] - The block object, used for Shopify editor attributes when attributes are enabled.
+{%- enddoc -%}
+
+<div
+  role="separator"
+  class="ornament-divider ornament-divider-{{ id }} spacing-style"
+  style="
+    --ornament-divider-justify-content: {{ settings.alignment_horizontal | default: 'center' }};
+    {% if settings.divider_color != blank %}--color-ornament: {{ settings.divider_color }};{% endif %}
+    {% render 'spacing-style', settings: settings %}
+  "
+  {% if attributes %}
+    {{- block.shopify_attributes -}}
+  {% endif %}
+>
+  <div class="ornament-divider__inner" style="--ornament-divider-max-width: {{ settings.width_percent | default: 100 }}%;">
+    <span class="ornament-divider__line"></span>
+
+    {%- case settings.glyph -%}
+      {%- when 'stars' -%}
+        <span class="ornament-divider__glyph ornament-divider__glyph--stars" aria-hidden="true">
+          <span>&#10022;</span><span>&#10022;</span><span>&#10022;</span>
+        </span>
+      {%- when 'fleuron' -%}
+        <span class="ornament-divider__glyph ornament-divider__glyph--fleuron" aria-hidden="true">&#10086;</span>
+      {%- when 'rule' -%}
+      {%- else -%}
+        <span class="ornament-divider__glyph ornament-divider__glyph--diamond" aria-hidden="true">
+          <span class="ornament-divider__diamond ornament-divider__diamond--sm ornament-divider__diamond--filled"></span>
+          <span class="ornament-divider__diamond ornament-divider__diamond--lg ornament-divider__diamond--outline">
+            <span class="ornament-divider__diamond-dot"></span>
+          </span>
+          <span class="ornament-divider__diamond ornament-divider__diamond--sm ornament-divider__diamond--filled"></span>
+        </span>
+    {%- endcase -%}
+
+    <span class="ornament-divider__line"></span>
+  </div>
+</div>
+
+{% stylesheet %}
+  /* Establishes --color-ornament (Parchment's tarnished-gold tone); Phase 5 adds a value per scheme. */
+  :root {
+    --color-ornament: #A9853F;
+  }
+
+  .ornament-divider {
+    display: flex;
+    justify-content: var(--ornament-divider-justify-content);
+  }
+
+  .ornament-divider__inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: var(--ornament-divider-max-width);
+  }
+
+  .ornament-divider__line {
+    flex: 1;
+    min-width: 16px;
+    height: 1px;
+    background: var(--color-ornament);
+  }
+
+  .ornament-divider__glyph {
+    flex: none;
+    line-height: 1;
+    color: var(--color-ornament);
+  }
+
+  .ornament-divider__glyph--stars {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    font-family: var(--font-body--family);
+  }
+
+  .ornament-divider__glyph--fleuron {
+    display: block;
+    font-size: 22px;
+    font-family: var(--font-body--family);
+    transform: translateY(-1px);
+  }
+
+  .ornament-divider__glyph--diamond {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .ornament-divider__diamond {
+    flex: none;
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    transform: rotate(45deg);
+  }
+
+  .ornament-divider__diamond--sm {
+    width: 5px;
+    height: 5px;
+  }
+
+  .ornament-divider__diamond--lg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .ornament-divider__diamond--filled {
+    background: var(--color-ornament);
+  }
+
+  .ornament-divider__diamond--outline {
+    background: transparent;
+    border: 1px solid var(--color-ornament);
+  }
+
+  .ornament-divider__diamond-dot {
+    width: 3px;
+    height: 3px;
+    background: var(--color-ornament);
+  }
+{% endstylesheet %}

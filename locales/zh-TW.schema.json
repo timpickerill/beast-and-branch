@@ -1,5 +1,7 @@
 {
   "names": {
+    "ornament_divider": "Ornament divider",
+    "ornament_divider_section": "Ornament divider",
     "404": "404",
     "colors": "調色盤",
     "custom_section": "自訂區段",
@@ -162,6 +164,7 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "ornament_glyph": "Ornament",
     "alignment": "對齊",
     "autoplay": "自動播放",
     "background": "背景",
@@ -577,6 +580,10 @@
     "title_preset": "標題預設設定"
   },
   "options": {
+    "ornament_diamond": "Diamond",
+    "ornament_fleuron": "Fleuron",
+    "ornament_rule": "Plain rule",
+    "ornament_stars": "Stars",
     "apple": "Apple",
     "arrow": "箭頭",
     "auto": "自動",

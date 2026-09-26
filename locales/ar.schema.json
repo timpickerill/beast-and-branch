@@ -235,6 +235,8 @@
     "media_type_info": "تمت تعبئة الميزات من روابط القائمة الخاصة بك"
   },
   "names": {
+    "ornament_divider": "Ornament divider",
+    "ornament_divider_section": "Ornament divider",
     "column": "عمود",
     "product_title": "عنوان المنتج",
     "custom_liquid": "Liquid مخصص",
@@ -397,6 +399,10 @@
     "comparison_slider": "شريط تمرير المقارنة"
   },
   "options": {
+    "ornament_diamond": "Diamond",
+    "ornament_fleuron": "Fleuron",
+    "ornament_rule": "Plain rule",
+    "ornament_stars": "Stars",
     "above_carousel": "أعلى العرض الدائري",
     "accent": "تمييز",
     "all": "الكل",
@@ -679,6 +685,7 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "ornament_glyph": "Ornament",
     "accordion": "أكورديون",
     "account": "حساب",
     "actions_display_style": "نمط القائمة",

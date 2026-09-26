@@ -1,5 +1,7 @@
 {
   "names": {
+    "ornament_divider": "Ornament divider",
+    "ornament_divider_section": "Ornament divider",
     "404": "404",
     "colors": "Paleta de cores",
     "custom_section": "Seção personalizada",
@@ -162,6 +164,7 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "ornament_glyph": "Ornament",
     "alignment": "Alinhamento",
     "autoplay": "Reprodução automática",
     "background": "Plano de fundo",
@@ -577,6 +580,10 @@
     "title_preset": "Predefinição de título"
   },
   "options": {
+    "ornament_diamond": "Diamond",
+    "ornament_fleuron": "Fleuron",
+    "ornament_rule": "Plain rule",
+    "ornament_stars": "Stars",
     "apple": "Apple",
     "arrow": "Seta",
     "auto": "Automático",

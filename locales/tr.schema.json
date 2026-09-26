@@ -1,5 +1,7 @@
 {
   "names": {
+    "ornament_divider": "Ornament divider",
+    "ornament_divider_section": "Ornament divider",
     "404": "404",
     "custom_section": "Özel bölüm",
     "icon": "Simge",
@@ -162,6 +164,7 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "ornament_glyph": "Ornament",
     "autoplay": "Otomatik oynatma",
     "background": "Arka plan",
     "border_radius": "Köşe yarıçapı",
@@ -577,6 +580,10 @@
     "title_preset": "Başlık ön ayarı"
   },
   "options": {
+    "ornament_diamond": "Diamond",
+    "ornament_fleuron": "Fleuron",
+    "ornament_rule": "Plain rule",
+    "ornament_stars": "Stars",
     "apple": "Apple",
     "arrow": "Ok",
     "banana": "Muz",
