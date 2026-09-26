@@ -1,0 +1,137 @@
+{% liquid
+  if section.settings.background_color != blank
+    render 'contrast-override', background_color: section.settings.background_color, section_id: section.id
+  endif
+%}
+
+<div
+  class="section-background{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+></div>
+
+<div
+  class="section section--{{ section.settings.section_width }}{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+  data-testid="ornament-divider-{{ section.id }}"
+>
+  {% render 'ornament-divider', id: section.id, settings: section.settings, attributes: true %}
+</div>
+
+{% schema %}
+{
+  "name": "Ornament divider",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "select",
+      "id": "glyph",
+      "label": "Ornament",
+      "options": [
+        {
+          "value": "diamond",
+          "label": "Diamond"
+        },
+        {
+          "value": "stars",
+          "label": "Stars"
+        },
+        {
+          "value": "fleuron",
+          "label": "Fleuron"
+        },
+        {
+          "value": "rule",
+          "label": "Plain rule"
+        }
+      ],
+      "default": "diamond"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "t:settings.color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "range",
+      "id": "width_percent",
+      "label": "t:settings.length",
+      "min": 5,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 60
+    },
+    {
+      "type": "select",
+      "id": "alignment_horizontal",
+      "label": "t:settings.alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "t:options.direction_start"
+        },
+        {
+          "value": "center",
+          "label": "t:options.direction_center"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:options.direction_end"
+        }
+      ],
+      "default": "center",
+      "visible_if": "{{ section.settings.width_percent < 100 }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ornament divider",
+      "category": "t:categories.layout"
+    }
+  ]
+}
+{% endschema %}
