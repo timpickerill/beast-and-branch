@@ -1,0 +1,8 @@
+/*
+ * Beast & Branch: tunes Horizon's built-in subtle-zoom card hover effect
+ * (snippets/card-hover-effect-styles.liquid) to the design system's 3.5% amount.
+ */
+
+:root {
+  --hover-subtle-zoom-amount: 1.035;
+}
