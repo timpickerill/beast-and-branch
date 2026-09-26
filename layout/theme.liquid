@@ -25,6 +25,7 @@
     {%- render 'theme-styles-variables' -%}
     {%- render 'color-palette' -%}
     {%- render 'bb-fonts' -%}
+    {{ 'bb-cards.css' | asset_url | stylesheet_tag }}
 
     {% if request.design_mode %}
       {%- render 'theme-editor' -%}
