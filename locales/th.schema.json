@@ -1,7 +1,5 @@
 {
   "names": {
-    "ornament_divider": "Ornament divider",
-    "ornament_divider_section": "Ornament divider",
     "404": "404",
     "colors": "จานสี",
     "custom_section": "ส่วนที่กำหนดเอง",
@@ -164,7 +162,6 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
-    "ornament_glyph": "Ornament",
     "alignment": "การจัดตำแหน่ง",
     "autoplay": "เล่นอัตโนมัติ",
     "background": "พื้นหลัง",
@@ -580,10 +577,6 @@
     "title_preset": "พรีเซ็ตชื่อ"
   },
   "options": {
-    "ornament_diamond": "Diamond",
-    "ornament_fleuron": "Fleuron",
-    "ornament_rule": "Plain rule",
-    "ornament_stars": "Stars",
     "apple": "Apple",
     "arrow": "ลูกศร",
     "auto": "อัตโนมัติ",

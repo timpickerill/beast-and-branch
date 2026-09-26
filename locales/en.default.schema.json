@@ -347,8 +347,6 @@
     "media_with_text": "Media with text",
     "menu": "Menu",
     "multicolumn": "Multicolumn",
-    "ornament_divider": "Ornament divider",
-    "ornament_divider_section": "Ornament divider",
     "rich_text_section": "Rich text",
     "page": "Page",
     // Theme block name for main page body content
@@ -618,10 +616,6 @@
     "one_half": "1/2",
     "one_number": "1",
     "one_third": "1/3",
-    "ornament_diamond": "Diamond",
-    "ornament_fleuron": "Fleuron",
-    "ornament_rule": "Plain rule",
-    "ornament_stars": "Stars",
     // Star rating style showing empty star outlines
     "outline": "Outline",
     "page": "Page",
@@ -986,7 +980,6 @@
     "open_by_default": "Open by default",
     "open_new_tab": "Open link in new tab",
     "open_row_by_default": "Open row by default",
-    "ornament_glyph": "Ornament",
     "overlay": "Overlay",
     "overlay_color": "Overlay color",
     "overlay_opacity": "Overlay opacity",

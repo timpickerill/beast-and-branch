@@ -1,7 +1,5 @@
 {
   "names": {
-    "ornament_divider": "Ornament divider",
-    "ornament_divider_section": "Ornament divider",
     "404": "404",
     "custom_section": "Aangepaste sectie",
     "icon": "Pictogram",
@@ -164,7 +162,6 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
-    "ornament_glyph": "Ornament",
     "autoplay": "Automatisch afspelen",
     "background": "Achtergrond",
     "border_radius": "Hoekradius",
@@ -580,10 +577,6 @@
     "title_preset": "Titelvoorinstelling"
   },
   "options": {
-    "ornament_diamond": "Diamond",
-    "ornament_fleuron": "Fleuron",
-    "ornament_rule": "Plain rule",
-    "ornament_stars": "Stars",
     "apple": "Apple",
     "arrow": "Pijl",
     "banana": "Banaan",

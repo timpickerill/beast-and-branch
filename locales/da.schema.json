@@ -1,7 +1,5 @@
 {
   "names": {
-    "ornament_divider": "Ornament divider",
-    "ornament_divider_section": "Ornament divider",
     "404": "404",
     "colors": "Farvepalet",
     "custom_section": "Brugerdefineret sektion",
@@ -164,7 +162,6 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
-    "ornament_glyph": "Ornament",
     "alignment": "Justering",
     "autoplay": "Automatisk afspilning",
     "background": "Baggrund",
@@ -580,10 +577,6 @@
     "title_preset": "Forudindstilling for titel"
   },
   "options": {
-    "ornament_diamond": "Diamond",
-    "ornament_fleuron": "Fleuron",
-    "ornament_rule": "Plain rule",
-    "ornament_stars": "Stars",
     "apple": "Apple",
     "arrow": "Pil",
     "auto": "Auto",

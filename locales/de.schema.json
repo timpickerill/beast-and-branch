@@ -1,7 +1,5 @@
 {
   "names": {
-    "ornament_divider": "Ornament divider",
-    "ornament_divider_section": "Ornament divider",
     "404": "404",
     "custom_section": "Benutzerdefinierter Abschnitt",
     "icon": "Symbol",
@@ -164,7 +162,6 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
-    "ornament_glyph": "Ornament",
     "autoplay": "Autoplay",
     "background": "Hintergrund",
     "border_radius": "Eckenradius",
@@ -580,10 +577,6 @@
     "title_preset": "Titelvoreinstellung"
   },
   "options": {
-    "ornament_diamond": "Diamond",
-    "ornament_fleuron": "Fleuron",
-    "ornament_rule": "Plain rule",
-    "ornament_stars": "Stars",
     "apple": "Apfel",
     "arrow": "Pfeil",
     "banana": "Banane",

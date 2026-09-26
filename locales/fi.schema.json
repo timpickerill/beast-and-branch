@@ -1,7 +1,5 @@
 {
   "names": {
-    "ornament_divider": "Ornament divider",
-    "ornament_divider_section": "Ornament divider",
     "404": "404",
     "colors": "Väripaletti",
     "custom_section": "Mukautettu osio",
@@ -164,7 +162,6 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
-    "ornament_glyph": "Ornament",
     "alignment": "Tasaus",
     "autoplay": "Automaattinen toisto",
     "background": "Tausta",
@@ -580,10 +577,6 @@
     "title_preset": "Otsikon esiasetus"
   },
   "options": {
-    "ornament_diamond": "Diamond",
-    "ornament_fleuron": "Fleuron",
-    "ornament_rule": "Plain rule",
-    "ornament_stars": "Stars",
     "apple": "Omena",
     "arrow": "Nuoli",
     "auto": "Automaattinen",
