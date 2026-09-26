@@ -74,14 +74,24 @@
     "variant_button_width": "equal-width-buttons",
     "content_for_index": [],
     "badge_sold_out_background_color": "{{ settings.color_palette.color2 }}",
-    "palette_input_border": "{{ settings.color_palette.color3 }}",
     "palette_variant_border": "{{ settings.color_palette.color3 }}",
+    "page_background_color": "#F4EAD5",
+    "page_text_color": "#2B231B",
+    "palette_primary_button_background": "#1E1914",
+    "palette_primary_button_text": "#F4EAD5",
+    "palette_primary_button_border": "#1E1914",
+    "palette_secondary_button_background": "rgba(30, 25, 20, 0)",
+    "palette_secondary_button_text": "#1E1914",
+    "palette_secondary_button_border": "#1E1914",
+    "palette_input_background": "#FAF4E6",
+    "palette_input_text": "#1E1914",
+    "palette_input_border": "#7A654C",
     "color_palette": {
-      "background": "#ffffff",
-      "foreground": "#000000",
-      "color1": "#333333",
-      "color2": "#EEF1EA",
-      "color3": "#DFDFDF"
+      "background": "#F4EAD5",
+      "foreground": "#1E1914",
+      "color1": "#8A2F1C",
+      "color2": "#EADCBD",
+      "color3": "#CDB68A"
     }
   },
   "presets": {
@@ -150,14 +160,24 @@
       "variant_button_radius": 14,
       "variant_button_width": "equal-width-buttons",
       "badge_sold_out_background_color": "{{ settings.color_palette.color2 }}",
-      "palette_input_border": "{{ settings.color_palette.color3 }}",
       "palette_variant_border": "{{ settings.color_palette.color3 }}",
+      "page_background_color": "#F4EAD5",
+      "page_text_color": "#2B231B",
+      "palette_primary_button_background": "#1E1914",
+      "palette_primary_button_text": "#F4EAD5",
+      "palette_primary_button_border": "#1E1914",
+      "palette_secondary_button_background": "rgba(30, 25, 20, 0)",
+      "palette_secondary_button_text": "#1E1914",
+      "palette_secondary_button_border": "#1E1914",
+      "palette_input_background": "#FAF4E6",
+      "palette_input_text": "#1E1914",
+      "palette_input_border": "#7A654C",
       "color_palette": {
-        "background": "#ffffff",
-        "foreground": "#000000",
-        "color1": "#333333",
-        "color2": "#EEF1EA",
-        "color3": "#DFDFDF"
+        "background": "#F4EAD5",
+        "foreground": "#1E1914",
+        "color1": "#8A2F1C",
+        "color2": "#EADCBD",
+        "color3": "#CDB68A"
       }
     }
   }
