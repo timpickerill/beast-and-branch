@@ -1,0 +1,161 @@
+/*
+ * Beast & Branch: additional color schemes (Ink, Beast, Midnight, Branch, Moss), applied via a
+ * "scheme-*" class on a section wrapper (see the color_mood setting on sections/section.liquid
+ * and sections/footer.liquid). Parchment is the sitewide default, already wired up in Phase 1
+ * through the theme's own settings-driven :root variables — it has no class here.
+ *
+ * Each scheme redeclares Horizon's existing button/input variable names (--color-primary-button-*,
+ * --color-secondary-button-*, --color-input-*, --color-background, --color-foreground,
+ * --color-border) so components inside a scheme-classed section pick up the right colors with no
+ * further changes, plus this theme's own brand tokens (--color-surface, --color-foreground-heading,
+ * --color-primary/-hover, --color-ornament, --color-border-strong) for custom components.
+ *
+ * Values are copied verbatim from design/Beast & Branch Design System/tokens/colors.css, already
+ * verified there for AA contrast. This intentionally bypasses Horizon's own automatic
+ * contrast-override system (snippets/contrast-override.liquid) for anything scoped inside these
+ * classes — recheck contrast manually if these values are ever hand-edited.
+ */
+
+.scheme-ink {
+  --color-background: #1E1914;
+  --color-surface: #2B231B;
+  --color-foreground-heading: #F4EAD5;
+  --color-foreground: #E9DCC0;
+  --color-foreground-muted: #BFA98A;
+  --color-primary: #D8BC7E;
+  --color-primary-hover: #E8D2A0;
+  --color-ornament: #C9A45C;
+  --color-border: #4A3D2E;
+  --color-border-strong: #8C7657;
+  --color-primary-button-background: #D8BC7E;
+  --color-primary-button-text: #1E1914;
+  --color-primary-button-border: #D8BC7E;
+  --color-primary-button-hover-background: #F4EAD5;
+  --color-primary-button-hover-text: #1E1914;
+  --color-primary-button-hover-border: #F4EAD5;
+  --color-secondary-button-background: transparent;
+  --color-secondary-button-text: #F4EAD5;
+  --color-secondary-button-border: #F4EAD5;
+  --color-secondary-button-hover-background: #F4EAD5;
+  --color-secondary-button-hover-text: #1E1914;
+  --color-input-background: #15110D;
+  --color-input-text: #F4EAD5;
+  --color-input-border: #8C7657;
+}
+
+.scheme-beast {
+  --color-background: #0C0D14;
+  --color-surface: #111728;
+  --color-foreground-heading: #F5EBDD;
+  --color-foreground: #E6DCCB;
+  --color-foreground-muted: #A9A08F;
+  --color-primary: #E0583A;
+  --color-primary-hover: #EE7B55;
+  --color-ornament: #C9A45C;
+  --color-border: #2A3452;
+  --color-border-strong: #7A6A4A;
+  --color-primary-button-background: #A8321B;
+  --color-primary-button-text: #F5EBDD;
+  --color-primary-button-border: #A8321B;
+  --color-primary-button-hover-background: #C9A45C;
+  --color-primary-button-hover-text: #0C0D14;
+  --color-primary-button-hover-border: #C9A45C;
+  --color-secondary-button-background: transparent;
+  --color-secondary-button-text: #F5EBDD;
+  --color-secondary-button-border: #C9A45C;
+  --color-secondary-button-hover-background: #C9A45C;
+  --color-secondary-button-hover-text: #0C0D14;
+  --color-input-background: #111728;
+  --color-input-text: #F5EBDD;
+  --color-input-border: #7A6A4A;
+}
+
+.scheme-midnight {
+  --color-background: #17213A;
+  --color-surface: #22304F;
+  --color-foreground-heading: #F5EBDD;
+  --color-foreground: #E6DCCB;
+  --color-foreground-muted: #B4AC9C;
+  --color-primary: #D8BC7E;
+  --color-primary-hover: #E8D2A0;
+  --color-ornament: #C9A45C;
+  --color-border: #34466E;
+  --color-border-strong: #8A7A58;
+  --color-primary-button-background: #A8321B;
+  --color-primary-button-text: #F5EBDD;
+  --color-primary-button-border: #A8321B;
+  --color-primary-button-hover-background: #D8BC7E;
+  --color-primary-button-hover-text: #0C0D14;
+  --color-primary-button-hover-border: #D8BC7E;
+  --color-secondary-button-background: transparent;
+  --color-secondary-button-text: #F5EBDD;
+  --color-secondary-button-border: #D8BC7E;
+  --color-secondary-button-hover-background: #D8BC7E;
+  --color-secondary-button-hover-text: #0C0D14;
+  --color-input-background: #111728;
+  --color-input-text: #F5EBDD;
+  --color-input-border: #8A7A58;
+}
+
+.scheme-branch {
+  --color-background: #EFE8D2;
+  --color-surface: #D5E2E8;
+  --color-foreground-heading: #1F2A15;
+  --color-foreground: #26301C;
+  --color-foreground-muted: #4E5A3E;
+  --color-primary: #A8321F;
+  --color-primary-hover: #8C2718;
+  --color-ornament: #46622B;
+  --color-border: #B9C39A;
+  --color-border-strong: #5B7A3A;
+  --color-primary-button-background: #46622B;
+  --color-primary-button-text: #EFE8D2;
+  --color-primary-button-border: #46622B;
+  --color-primary-button-hover-background: #A8321F;
+  --color-primary-button-hover-text: #EFE8D2;
+  --color-primary-button-hover-border: #A8321F;
+  --color-secondary-button-background: transparent;
+  --color-secondary-button-text: #1F2A15;
+  --color-secondary-button-border: #46622B;
+  --color-secondary-button-hover-background: #46622B;
+  --color-secondary-button-hover-text: #EFE8D2;
+  --color-input-background: #FAF4E6;
+  --color-input-text: #1F2A15;
+  --color-input-border: #5B7A3A;
+}
+
+.scheme-moss {
+  --color-background: #2F4220;
+  --color-surface: #354B21;
+  --color-foreground-heading: #EFE8D2;
+  --color-foreground: #E6E0C8;
+  --color-foreground-muted: #C9CDB0;
+  --color-primary: #C3D5DE;
+  --color-primary-hover: #DCE7EC;
+  --color-ornament: #9DB07A;
+  --color-border: #4F6636;
+  --color-border-strong: #9DB07A;
+  --color-primary-button-background: #EFE8D2;
+  --color-primary-button-text: #2F4220;
+  --color-primary-button-border: #EFE8D2;
+  --color-primary-button-hover-background: #C3D5DE;
+  --color-primary-button-hover-text: #1F2A15;
+  --color-primary-button-hover-border: #C3D5DE;
+  --color-secondary-button-background: transparent;
+  --color-secondary-button-text: #EFE8D2;
+  --color-secondary-button-border: #EFE8D2;
+  --color-secondary-button-hover-background: #EFE8D2;
+  --color-secondary-button-hover-text: #2F4220;
+  --color-input-background: #1F2A15;
+  --color-input-text: #EFE8D2;
+  --color-input-border: #9DB07A;
+}
+
+.scheme-ink,
+.scheme-beast,
+.scheme-midnight,
+.scheme-branch,
+.scheme-moss {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}

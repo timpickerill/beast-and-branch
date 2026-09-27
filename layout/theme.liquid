@@ -27,6 +27,7 @@
     {%- render 'bb-fonts' -%}
     {{ 'bb-buttons.css' | asset_url | stylesheet_tag }}
     {{ 'bb-cards.css' | asset_url | stylesheet_tag }}
+    {{ 'bb-schemes.css' | asset_url | stylesheet_tag }}
 
     {% if request.design_mode %}
       {%- render 'theme-editor' -%}

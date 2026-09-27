@@ -1,14 +1,19 @@
 {% liquid
-  if section.settings.background_color != blank
+  # A "color_mood" scheme is a complete, fixed color story on its own — skip the dynamic
+  # background_color/contrast-override mechanism entirely rather than layering both on one element.
+  assign use_scheme = false
+  if section.settings.color_mood != blank
+    assign use_scheme = true
+  elsif section.settings.background_color != blank
     render 'contrast-override', background_color: section.settings.background_color, section_id: section.id
   endif
 %}
 
 <div
-  class="section-background{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+  class="section-background{% if use_scheme %} scheme-{{ section.settings.color_mood }}{% elsif section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
 ></div>
 <div
-  class="section section--{{ section.settings.section_width }}{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+  class="section section--{{ section.settings.section_width }}{% if use_scheme %} scheme-{{ section.settings.color_mood }}{% elsif section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
 >
   {% liquid
     assign total_blocks = section.blocks.size
@@ -179,10 +184,43 @@
       "default": 0
     },
     {
+      "type": "select",
+      "id": "color_mood",
+      "label": "Color mood",
+      "options": [
+        {
+          "value": "",
+          "label": "Default (theme palette)"
+        },
+        {
+          "value": "ink",
+          "label": "Ink"
+        },
+        {
+          "value": "beast",
+          "label": "Beast"
+        },
+        {
+          "value": "midnight",
+          "label": "Midnight"
+        },
+        {
+          "value": "branch",
+          "label": "Branch"
+        },
+        {
+          "value": "moss",
+          "label": "Moss"
+        }
+      ],
+      "default": "ink"
+    },
+    {
       "type": "color",
       "id": "background_color",
       "label": "t:settings.background_color",
-      "default": "{{ settings.color_palette.foreground }}"
+      "default": "{{ settings.color_palette.foreground }}",
+      "visible_if": "{{ section.settings.color_mood == blank }}"
     },
     {
       "type": "header",
