@@ -1,0 +1,89 @@
+{%- doc -%}
+  Renders up to two product badges (sold out, sale, and the brand's own New/Beast/Branch/
+  Clyde's Pick kinds), matching the design system's Badge component. Extracted out of
+  blocks/_product-card-gallery.liquid so new badge kinds don't need duplicating that file's markup.
+
+  Sold out and sale stay driven by product availability/compare-at price and the existing
+  badge_sale_*/badge_sold_out_* theme settings (unchanged). The brand kinds are opt-in via product
+  tags, since Horizon has no metafield or setting for them:
+    - tag "new"        → "New"
+    - tag "beast"       → "Beast"
+    - tag "branch"      → "Branch"
+    - tag "staff-pick"  → "Clyde's Pick"
+
+  Per the design, these four use fixed colors (not theme settings) "so they read over any
+  artwork" — the same deliberate deviation the sale/sold-out colors already follow.
+
+  Priority order when several apply: sold out, sale, new, beast, branch, picks — first two shown,
+  matching the design's "max two badges; Sold Out replaces Sale" rule.
+
+  @param {object} product - The product to derive badge kinds from.
+{%- enddoc -%}
+
+{% liquid
+  assign badge_kinds = ''
+
+  if product.available == false
+    assign badge_kinds = badge_kinds | append: 'soldout,'
+  elsif product.compare_at_price > product.price
+    assign badge_kinds = badge_kinds | append: 'sale,'
+  endif
+
+  if product.tags contains 'new'
+    assign badge_kinds = badge_kinds | append: 'new,'
+  endif
+  if product.tags contains 'beast'
+    assign badge_kinds = badge_kinds | append: 'beast,'
+  endif
+  if product.tags contains 'branch'
+    assign badge_kinds = badge_kinds | append: 'branch,'
+  endif
+  if product.tags contains 'staff-pick'
+    assign badge_kinds = badge_kinds | append: 'picks,'
+  endif
+
+  assign badge_kinds = badge_kinds | split: ','
+%}
+
+{% if badge_kinds.size > 0 %}
+  <div
+    class="product-badges product-badges--{{ settings.badge_position }}"
+    style="
+      --badge-border-radius: {{ settings.badge_corner_radius }}px;
+      --badge-font-family: var(--font-{{ settings.badge_font_family }}--family);
+      --badge-font-weight: var(--font-{{ settings.badge_font_family }}--weight);
+      --badge-text-transform: {{ settings.badge_text_transform }};
+    "
+  >
+    {% for kind in badge_kinds limit: 2 %}
+      <div
+        class="
+          product-badges__badge product-badges__badge--rectangle
+          {% case kind %}
+            {% when 'soldout' %}color-custom-badge-sold-out
+            {% when 'sale' %}color-custom-badge-sale
+            {% else %}product-badges__badge--{{ kind }}
+          {% endcase %}
+        "
+      >
+        <span class="product-badges__badge-pip" aria-hidden="true"></span>
+        {%- case kind -%}
+          {%- when 'soldout' -%}
+            {{ 'content.product_badge_sold_out' | t }}
+          {%- when 'sale' -%}
+            {{ 'content.product_badge_sale' | t }}
+          {%- when 'new' -%}
+            New
+          {%- when 'beast' -%}
+            Beast
+          {%- when 'branch' -%}
+            Branch
+          {%- when 'picks' -%}
+            Clyde's Pick
+        {%- endcase -%}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% render 'product-badges-styles' %}
