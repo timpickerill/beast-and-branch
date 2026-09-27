@@ -14,6 +14,15 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "ornament_divider_stars": {
+          "type": "_ornament-divider",
+          "settings": {
+            "glyph": "stars",
+            "width_percent": 100,
+            "padding-block-start": 0,
+            "padding-block-end": 24
+          }
+        },
         "group_wErUQf": {
           "type": "group",
           "settings": {
@@ -174,6 +183,7 @@
         }
       },
       "block_order": [
+        "ornament_divider_stars",
         "group_wErUQf",
         "menu_footer",
         "menu_main"
