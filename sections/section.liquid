@@ -233,6 +233,38 @@
     },
     {
       "type": "select",
+      "id": "color_mood",
+      "label": "Color mood",
+      "options": [
+        {
+          "value": "",
+          "label": "Default (theme palette)"
+        },
+        {
+          "value": "ink",
+          "label": "Ink"
+        },
+        {
+          "value": "beast",
+          "label": "Beast"
+        },
+        {
+          "value": "midnight",
+          "label": "Midnight"
+        },
+        {
+          "value": "branch",
+          "label": "Branch"
+        },
+        {
+          "value": "moss",
+          "label": "Moss"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
       "id": "background_media",
       "label": "t:settings.background_media",
       "options": [
@@ -256,7 +288,7 @@
       "id": "background_color",
       "label": "t:settings.background_color",
       "placeholder": "t:settings.default",
-      "visible_if": "{{ section.settings.background_media == 'none' }}"
+      "visible_if": "{{ section.settings.background_media == 'none' and section.settings.color_mood == blank }}"
     },
     {
       "type": "video",

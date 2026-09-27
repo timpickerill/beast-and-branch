@@ -12,16 +12,37 @@
   if section.settings.background_media != blank and section.settings.background_media != 'none'
     assign skip_contrast = true
   endif
-%}
-{% render 'contrast-override',
-  background_color: background_color,
-  section_id: section_id,
-  skip_contrast: skip_contrast
+
+  # A "color_mood" scheme is a complete, fixed color story on its own — skip the dynamic
+  # background_color/contrast-override mechanism entirely rather than layering both on one element.
+  assign use_scheme = false
+  if section.settings.color_mood != blank
+    assign use_scheme = true
+  else
+    render 'contrast-override', background_color: background_color, section_id: section_id, skip_contrast: skip_contrast
+  endif
 %}
 
-<div class="section-background color-custom-{{ section_id }}"></div>
 <div
-  class="section section--{{ section.settings.section_width }} color-custom-{{ section_id }}"
+  class="
+    section-background
+    {% if use_scheme %}
+      scheme-{{ section.settings.color_mood }}
+    {% else %}
+      color-custom-{{ section_id }}
+    {% endif %}
+  "
+></div>
+<div
+  class="
+    section
+    section--{{ section.settings.section_width }}
+    {% if use_scheme %}
+      scheme-{{ section.settings.color_mood }}
+    {% else %}
+      color-custom-{{ section_id }}
+    {% endif %}
+  "
   data-testid="ui-test-section"
 
   {% if request.visual_preview_mode %}
