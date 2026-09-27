@@ -11,6 +11,9 @@
 
     position: absolute;
     z-index: var(--layer-flat);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
 
   .product-badges--bottom-left {
@@ -34,6 +37,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 6px;
     text-align: center;
     color: var(--color-foreground);
     background: var(--color-background);
@@ -47,5 +51,42 @@
   .product-badges__badge--rectangle {
     padding-block: var(--badge-rectangle-padding-block);
     padding-inline: var(--badge-rectangle-padding-inline);
+  }
+
+  /* Small rotated-square "lozenge" pip preceding every badge's label, per the design system. */
+  .product-badges__badge-pip {
+    flex: none;
+    width: 4px;
+    height: 4px;
+    background: currentColor;
+    transform: rotate(45deg);
+  }
+
+  /*
+   * Fixed colors for the brand's own badge kinds (New/Beast/Branch/Clyde's Pick) — these have no
+   * theme setting, unlike sale/sold-out, so they read consistently over any product artwork.
+   */
+  .product-badges__badge--new {
+    color: #1E1914;
+    background: #FAF4E6;
+    border: 1px solid #1E1914;
+  }
+
+  .product-badges__badge--beast {
+    color: #EE7B55;
+    background: #0C0D14;
+    border: 1px solid #A8321B;
+  }
+
+  .product-badges__badge--branch {
+    color: #EFE8D2;
+    background: #46622B;
+    border: 1px solid #46622B;
+  }
+
+  .product-badges__badge--picks {
+    color: #1E1914;
+    background: #D8BC7E;
+    border: 1px solid #A9853F;
   }
 {% endstylesheet %}

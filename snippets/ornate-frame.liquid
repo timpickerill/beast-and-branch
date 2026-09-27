@@ -1,0 +1,90 @@
+{%- doc -%}
+  Wraps content in the design system's double-ruled manuscript border with lozenge corners —
+  for feature panels, lore-card-style content, and the Notice Board. Matches
+  design/Beast & Branch Design System/components/ornaments/OrnateFrame.jsx.
+
+  One frame per view region; don't nest frames.
+
+  @param {string} content - The captured HTML to render inside the frame.
+  @param {number} [padding] - Inner padding in px. Defaults to 32.
+  @param {boolean} [double] - Whether to show the inset second rule. Defaults to true.
+  @param {boolean} [corners] - Whether to show the four corner lozenges. Defaults to true.
+  @param {string} [background] - Background color. Defaults to transparent.
+  @param {string} [color] - Border/rule/corner color. Falls back to `--color-ornament` when blank.
+
+  @example
+  {% capture content %}
+    <p>Some content</p>
+  {% endcapture %}
+  {% render 'ornate-frame', content: content, background: 'var(--color-surface)' %}
+{%- enddoc -%}
+
+<div
+  class="ornate-frame{% if double != false %} ornate-frame--double{% endif %}"
+  style="
+    --ornate-frame-color: {{ color | default: 'var(--color-ornament)' }};
+    --ornate-frame-padding: {{ padding | default: 32 }}px;
+    --ornate-frame-background: {{ background | default: 'transparent' }};
+  "
+>
+  {% if corners != false %}
+    <span class="ornate-frame__corner ornate-frame__corner--top-start" aria-hidden="true"></span>
+    <span class="ornate-frame__corner ornate-frame__corner--top-end" aria-hidden="true"></span>
+    <span class="ornate-frame__corner ornate-frame__corner--bottom-start" aria-hidden="true"></span>
+    <span class="ornate-frame__corner ornate-frame__corner--bottom-end" aria-hidden="true"></span>
+  {% endif %}
+
+  <div class="ornate-frame__content">
+    {{ content }}
+  </div>
+</div>
+
+{% stylesheet %}
+  .ornate-frame {
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid var(--ornate-frame-color);
+    background: var(--ornate-frame-background);
+    padding: var(--ornate-frame-padding);
+  }
+
+  .ornate-frame--double::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid color-mix(in srgb, var(--ornate-frame-color) 55%, transparent);
+    pointer-events: none;
+  }
+
+  .ornate-frame__corner {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: var(--ornate-frame-color);
+    transform: rotate(45deg);
+  }
+
+  .ornate-frame__corner--top-start {
+    top: -4px;
+    inset-inline-start: -4px;
+  }
+
+  .ornate-frame__corner--top-end {
+    top: -4px;
+    inset-inline-end: -4px;
+  }
+
+  .ornate-frame__corner--bottom-start {
+    bottom: -4px;
+    inset-inline-start: -4px;
+  }
+
+  .ornate-frame__corner--bottom-end {
+    bottom: -4px;
+    inset-inline-end: -4px;
+  }
+
+  .ornate-frame__content {
+    position: relative;
+  }
+{% endstylesheet %}
