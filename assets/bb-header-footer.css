@@ -1,0 +1,14 @@
+/*
+ * Beast & Branch: adds the design system's 3px double ornament-color rule under the header.
+ * Horizon's own header border (sections/header.liquid) only supports a single solid line via the
+ * border_width/bottom_border_color settings — no border-style option — so this overrides the
+ * border-bottom shorthand outright. The #header-component id anchor gives this higher specificity
+ * than Horizon's class-only rule, so it wins regardless of viewport/menu-style variant or where in
+ * the document Horizon's own section stylesheet lands, without needing !important.
+ */
+
+#header-component .header__row--top:not(.divider--page-width),
+#header-component .header__row--top.divider--page-width .header__columns,
+#header-component .header__row--bottom {
+  border-bottom: 3px double var(--color-ornament);
+}
