@@ -57,3 +57,33 @@ Theme Check is the only "linter"/"test" tool in this repo — there's no `.theme
 - Media/slot logic in sections (e.g. `hero.liquid`) commonly toggles between image/video pairs per breakpoint (`image_1`/`video_1` + `_mobile` variants gated by `media_type_*` settings) — check both the picker value and the type flag before treating a slot as active, since the theme editor may leave stale hidden values from a prior media-type toggle.
 - RTL support matters: `request.locale.direction` drives `dir` on `<html>`, and layout/positioning should use logical CSS properties (start/end) rather than hardcoded left/right.
 - New user-facing strings go in `locales/en.default.json` (storefront) or `locales/en.default.schema.json` (theme editor/schema labels), referenced via Liquid's `t:` / `| t` filters — not hardcoded into the schema or template.
+
+## Project
+
+Beast and Branch is a fantasy/TTRPG print-on-demand store, built as a portfolio demo of
+AI-assisted Shopify development with human review. Code quality, commit history and
+documentation are part of the deliverable.
+
+## Workflow rules
+
+- Always `git pull` before starting work. The Shopify GitHub integration commits theme
+  editor changes (template JSON, `config/settings_data.json`) back to `main`.
+- Work on a feature branch; never commit directly to `main`. Keep PRs small and focused.
+- Write a PR description summarizing what changed, why, and anything I should check by hand.
+- Don't edit `config/settings_data.json` or template JSON unless the task requires it; those
+  are merchant-owned settings.
+- After each task, add an entry to `AI-LOG.md`: what you did, what I changed or rejected,
+  open questions.
+
+## Build approach
+
+- Configure existing Horizon sections, blocks and settings before writing custom code.
+- Prefer new files (`sections/bb-*.liquid`, `blocks/bb-*.liquid`, `assets/bb-*.js/css`)
+  over modifying Horizon core files, so upstream merges stay clean. If a core file must
+  change, note it in the PR.
+- Every new section or block must expose theme editor settings for anything a merchant
+  would reasonably want to change (text, images, colors, layout options).
+- Store-specific content (creatures, realms, product details) comes from metaobjects and
+  metafields, not hardcoded Liquid.
+- Design references live in `/design`. Match them; flag anything that needs significant
+  custom work or can't be matched cleanly before building it.
