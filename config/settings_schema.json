@@ -70,6 +70,184 @@
     ]
   },
   {
+    "name": "Brand color schemes",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Six schemes matching the Beast & Branch design system. Assign one to a section via its Color scheme setting."
+      },
+      {
+        "type": "color_scheme_group",
+        "id": "color_schemes",
+        "definition": [
+          {
+            "type": "color",
+            "id": "background",
+            "label": "Background",
+            "default": "#F4EAD5"
+          },
+          {
+            "type": "color",
+            "id": "surface",
+            "label": "Surface",
+            "default": "#EADCBD"
+          },
+          {
+            "type": "color",
+            "id": "foreground_heading",
+            "label": "Heading text",
+            "default": "#1E1914"
+          },
+          {
+            "type": "color",
+            "id": "foreground",
+            "label": "Text",
+            "default": "#2B231B"
+          },
+          {
+            "type": "color",
+            "id": "foreground_muted",
+            "label": "Muted text",
+            "default": "#5C4B38"
+          },
+          {
+            "type": "color",
+            "id": "primary",
+            "label": "Primary accent",
+            "default": "#8A2F1C"
+          },
+          {
+            "type": "color",
+            "id": "primary_hover",
+            "label": "Primary accent (hover)",
+            "default": "#6E2415"
+          },
+          {
+            "type": "color",
+            "id": "ornament",
+            "label": "Ornament",
+            "default": "#A9853F"
+          },
+          {
+            "type": "color",
+            "id": "border",
+            "label": "Border",
+            "default": "#CDB68A"
+          },
+          {
+            "type": "color",
+            "id": "border_strong",
+            "label": "Border (strong)",
+            "default": "#7A654C"
+          },
+          {
+            "type": "color",
+            "id": "primary_button_background",
+            "label": "Primary button background",
+            "default": "#1E1914"
+          },
+          {
+            "type": "color",
+            "id": "primary_button_text",
+            "label": "Primary button text",
+            "default": "#F4EAD5"
+          },
+          {
+            "type": "color",
+            "id": "primary_button_border",
+            "label": "Primary button border",
+            "default": "#1E1914"
+          },
+          {
+            "type": "color",
+            "id": "primary_button_hover_background",
+            "label": "Primary button background (hover)",
+            "default": "#8A2F1C"
+          },
+          {
+            "type": "color",
+            "id": "primary_button_hover_text",
+            "label": "Primary button text (hover)",
+            "default": "#F4EAD5"
+          },
+          {
+            "type": "color",
+            "id": "primary_button_hover_border",
+            "label": "Primary button border (hover)",
+            "default": "#8A2F1C"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_background",
+            "label": "Secondary button background",
+            "default": "rgba(0,0,0,0)",
+            "alpha": true
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_text",
+            "label": "Secondary button text",
+            "default": "#1E1914"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_border",
+            "label": "Secondary button border",
+            "default": "#1E1914"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_hover_background",
+            "label": "Secondary button background (hover)",
+            "default": "#1E1914"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_hover_text",
+            "label": "Secondary button text (hover)",
+            "default": "#F4EAD5"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_hover_border",
+            "label": "Secondary button border (hover)",
+            "default": "#1E1914"
+          },
+          {
+            "type": "color",
+            "id": "input_background",
+            "label": "Input background",
+            "default": "#FAF4E6"
+          },
+          {
+            "type": "color",
+            "id": "input_text",
+            "label": "Input text",
+            "default": "#1E1914"
+          },
+          {
+            "type": "color",
+            "id": "input_border",
+            "label": "Input border",
+            "default": "#7A654C"
+          }
+        ],
+        "role": {
+          "text": "foreground",
+          "background": "background",
+          "links": "primary",
+          "icons": "foreground",
+          "primary_button": "primary_button_background",
+          "on_primary_button": "primary_button_text",
+          "primary_button_border": "primary_button_border",
+          "secondary_button": "secondary_button_background",
+          "on_secondary_button": "secondary_button_text",
+          "secondary_button_border": "secondary_button_border"
+        }
+      }
+    ]
+  },
+  {
     "name": "t:names.typography",
     "settings": [
       {
