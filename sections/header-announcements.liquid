@@ -6,11 +6,9 @@
   ></script>
 {% endif %}
 
-{% render 'contrast-override', background_color: section.settings.background_color, section_id: section.id %}
-
-<div class="section-background color-custom-{{ section.id }}"></div>
+<div class="section-background color-scheme-{{ section.settings.color_scheme.id }}"></div>
 <aside
-  class="announcement-bar spacing-style section section--{{ section.settings.section_width }} color-custom-{{ section.id }}"
+  class="announcement-bar spacing-style section section--{{ section.settings.section_width }} color-scheme-{{ section.settings.color_scheme.id }}"
   style="{% render 'spacing-padding', settings: section.settings %}; --border-bottom-width: {{ section.settings.divider_width }}px;{% if section.settings.divider_color != blank %} --color-border: {{ section.settings.divider_color }};{% endif %}"
 >
   {% liquid
@@ -165,10 +163,10 @@
       "default": "page-width"
     },
     {
-      "type": "color",
-      "id": "background_color",
-      "label": "t:settings.background_color",
-      "placeholder": "t:settings.default"
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-ink"
     },
     {
       "type": "range",
