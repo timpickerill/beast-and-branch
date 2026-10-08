@@ -27,7 +27,7 @@
     {%- render 'bb-fonts' -%}
     {{ 'bb-buttons.css' | asset_url | stylesheet_tag }}
     {{ 'bb-cards.css' | asset_url | stylesheet_tag }}
-    {{ 'bb-schemes.css' | asset_url | stylesheet_tag }}
+    {%- render 'bb-color-scheme-styles' -%}
     {{ 'bb-header-footer.css' | asset_url | stylesheet_tag }}
 
     {% if request.design_mode %}
@@ -37,7 +37,7 @@
     {{ content_for_header }}
   </head>
 
-  <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
+  <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }} color-scheme-scheme-parchment">
     {% render 'skip-to-content-link', href: '#MainContent', text: 'accessibility.skip_to_text' %}
 
     {% render 'chat-drawer' %}

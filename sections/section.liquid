@@ -5,8 +5,7 @@
 {% render 'section',
   section: section,
   children: children,
-  section_id: section.id,
-  background_color: section.settings.background_color
+  section_id: section.id
 %}
 
 {% schema %}
@@ -232,36 +231,10 @@
       "content": "t:content.appearance"
     },
     {
-      "type": "select",
-      "id": "color_mood",
-      "label": "Color mood",
-      "options": [
-        {
-          "value": "",
-          "label": "Default (theme palette)"
-        },
-        {
-          "value": "ink",
-          "label": "Ink"
-        },
-        {
-          "value": "beast",
-          "label": "Beast"
-        },
-        {
-          "value": "midnight",
-          "label": "Midnight"
-        },
-        {
-          "value": "branch",
-          "label": "Branch"
-        },
-        {
-          "value": "moss",
-          "label": "Moss"
-        }
-      ],
-      "default": ""
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-parchment"
     },
     {
       "type": "select",
@@ -282,13 +255,6 @@
         }
       ],
       "default": "none"
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "t:settings.background_color",
-      "placeholder": "t:settings.default",
-      "visible_if": "{{ section.settings.background_media == 'none' and section.settings.color_mood == blank }}"
     },
     {
       "type": "video",

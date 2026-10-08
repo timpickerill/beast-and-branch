@@ -4,7 +4,9 @@
   @param {section} section - The section object
   @param {string} children - The children of the section
   @param {string} section_id - The ID of the section
-  @param {string} background_color - The background color of the section
+  @param {string} [background_color] - The background color of the section. Only used as a
+  fallback when the caller doesn't define a native `color_scheme` setting (compare
+  sections/section.liquid, which does, against sections/_blocks.liquid, which doesn't).
 {%- enddoc -%}
 
 {% liquid
@@ -13,36 +15,18 @@
     assign skip_contrast = true
   endif
 
-  # A "color_mood" scheme is a complete, fixed color story on its own — skip the dynamic
-  # background_color/contrast-override mechanism entirely rather than layering both on one element.
-  assign use_scheme = false
-  if section.settings.color_mood != blank
-    assign use_scheme = true
+  assign color_class = ''
+  if section.settings.color_scheme != blank
+    assign color_class = 'color-scheme-' | append: section.settings.color_scheme.id
   else
     render 'contrast-override', background_color: background_color, section_id: section_id, skip_contrast: skip_contrast
+    assign color_class = 'color-custom-' | append: section_id
   endif
 %}
 
+<div class="section-background {{ color_class }}"></div>
 <div
-  class="
-    section-background
-    {% if use_scheme %}
-      scheme-{{ section.settings.color_mood }}
-    {% else %}
-      color-custom-{{ section_id }}
-    {% endif %}
-  "
-></div>
-<div
-  class="
-    section
-    section--{{ section.settings.section_width }}
-    {% if use_scheme %}
-      scheme-{{ section.settings.color_mood }}
-    {% else %}
-      color-custom-{{ section_id }}
-    {% endif %}
-  "
+  class="section section--{{ section.settings.section_width }} {{ color_class }}"
   data-testid="ui-test-section"
 
   {% if request.visual_preview_mode %}
