@@ -34,8 +34,12 @@
     assign onboarding = true
   endif
 
-  if block_settings.background_color != blank
+  assign color_class = ''
+  if block_settings.color_scheme != blank
+    assign color_class = 'color-scheme-' | append: block_settings.color_scheme.id
+  elsif block_settings.background_color != blank
     render 'contrast-override', background_color: block_settings.background_color, section_id: block.id
+    assign color_class = 'color-custom-' | append: block.id
   endif
 %}
 
@@ -46,7 +50,7 @@
     {% if block_settings.placement == 'on_image' %}collection-card--image-bg{% endif %}
     {% if section.settings.layout_type == 'bento' %}collection-card--image-height-fixed{% endif %}
     {% if section.settings.layout_type == 'editorial' %}collection-card--flexible-aspect-ratio{% endif %}
-    {% if block_settings.background_color != blank %} color-custom-{{ block.id }}{% endif %}
+    {{ color_class }}
   "
   data-block-id="{{ block.id }}"
   {% if onboarding %}

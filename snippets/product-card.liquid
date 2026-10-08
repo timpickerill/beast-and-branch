@@ -54,8 +54,12 @@
     assign onboarding = true
   endif
 
-  if block_settings.background_color != blank
+  assign color_class = ''
+  if block_settings.color_scheme != blank
+    assign color_class = 'color-scheme-' | append: block_settings.color_scheme.id
+  elsif block_settings.background_color != blank
     render 'contrast-override', background_color: block_settings.background_color, text_color: block_settings.text_color, section_id: block.id
+    assign color_class = 'color-custom-' | append: block.id
   endif
 %}
 
@@ -96,7 +100,7 @@
       spacing-style
       border-style
       gap-style
-      {% if block_settings.background_color != blank %} color-custom-{{ block.id }}{% endif %}
+      {{ color_class }}
     "
     style="
       {% render 'border-override', settings: block_settings %}

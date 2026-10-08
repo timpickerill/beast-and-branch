@@ -5,17 +5,11 @@
 {% endcapture %}
 
 {% liquid
-  if block_settings.background_color != blank
-    assign skip_contrast = false
-    if block_settings.background_media != blank and block_settings.background_media != 'none'
-      assign skip_contrast = true
-    endif
-    render 'contrast-override', background_color: block_settings.background_color, section_id: block.id, skip_contrast: skip_contrast
-  endif
+  assign color_class = 'color-scheme-' | append: block_settings.color_scheme.id
 %}
 
 <div
-  class="card{% if block_settings.background_color != blank %} color-custom-{{ block.id }}{% endif %}"
+  class="card {{ color_class }}"
   ref="slides[]"
   data-carousel-card
   {{ block.shopify_attributes }}
@@ -375,11 +369,10 @@
       "default": "none"
     },
     {
-      "type": "color",
-      "id": "background_color",
-      "label": "t:settings.background_color",
-      "placeholder": "t:settings.default",
-      "visible_if": "{{ block.settings.background_media == 'none' }}"
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-parchment"
     },
     {
       "type": "video",
